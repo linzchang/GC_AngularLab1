@@ -36,6 +36,11 @@ h1 {
     border: 1px solid #E73D62;
     color: #E73D62;
 }
+.button:hover {
+    color: #b8304e;
+    border: 2px solid #b8304e;
+    font-weight: bold;
+}
 .addbutton {
     background-color: #E73D62;
     color: whitesmoke;

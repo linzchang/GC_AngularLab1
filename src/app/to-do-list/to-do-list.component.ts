@@ -13,6 +13,7 @@ export class ToDoListComponent implements OnInit {
   filterInput: string = "Filter your to-dos";
   taskList: TaskModel[];
   addItem: string = "Add your to do";
+  newTask: TaskModel;
   
 
   ngOnInit() {
@@ -30,6 +31,15 @@ export class ToDoListComponent implements OnInit {
       this.taskList[index].complete = true;
       this.taskList[index].taskClass = "taskComplete";
     } 
+  }
+
+  addTask(addItem: string) {
+    this.newTask = { task: addItem, complete: false, taskClass: "taskIncomplete", isVisible: true };
+    this.taskList.push(this.newTask);
+  }
+
+  removeTask(index: number) {
+    this.taskList.splice(index, 1);
   }
 
 }
