@@ -1,0 +1,35 @@
+import { Component, OnInit } from '@angular/core';
+import { TaskModel } from 'src/models/task.model';
+
+@Component({
+  selector: 'app-to-do-list',
+  templateUrl: './to-do-list.component.html',
+  styleUrls: ['./to-do-list.component.scss']
+})
+export class ToDoListComponent implements OnInit {
+
+  constructor() { }
+
+  filterInput: string = "Filter your to-dos";
+  taskList: TaskModel[];
+  addItem: string = "Add your to do";
+  
+
+  ngOnInit() {
+    this.taskList = [
+      { task: "Walk the dog", complete: false, taskClass: "taskIncomplete", isVisible: true},
+      { task: "Go to the store", complete: false, taskClass: "taskIncomplete", isVisible: true},
+      { task: "Get gas", complete: false, taskClass: "taskIncomplete", isVisible: true},
+      { task: "Wash the car", complete: false, taskClass: "taskIncomplete", isVisible: true}
+    ];
+  }
+
+  changeClass(isComplete: boolean, index: number){
+    if (isComplete == false)
+    {
+      this.taskList[index].complete = true;
+      this.taskList[index].taskClass = "taskComplete";
+    } 
+  }
+
+}

@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto');
+body, html {height: 100%; }
+.parent-container {
+    text-align: center;
+    background-color: #E73D62;
+    //width: 100%;
+    height: 100%;
+}
+.container {
+    border-radius: 4px;
+    background-color: whitesmoke;
+    display: inline-block;
+    min-width: 400px;
+    padding: 20px;
+    margin: 20px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+}
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+}
+.item {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 4px;
+}
+.textbox {
+    border: 1px solid gray;
+    width: 97%;
+}
+.button {
+    padding: 10px;
+    border-radius: 4px;
+    background-color: whitesmoke;
+    border: 1px solid #E73D62;
+    color: #E73D62;
+}
+.addbutton {
+    background-color: #E73D62;
+    color: whitesmoke;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    width: 100%;
+}
+.taskIncomplete {
+    color: black;
+}
+
+.taskComplete {
+    text-decoration: line-through;
+}
