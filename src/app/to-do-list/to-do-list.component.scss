@@ -44,6 +44,21 @@ h1 {
     border: none;
     width: 100%;
 }
+.addbutton:hover {
+    background-color: #b8304e;
+}
+.removebutton {
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    font-weight: bold;
+    float: right;
+    border-radius: 4px;
+}
+.removebutton:hover {
+    background-color: #E73D62;
+}
 .taskIncomplete {
     color: black;
 }
