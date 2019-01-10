@@ -10,9 +10,9 @@ export class ToDoListComponent implements OnInit {
 
   constructor() { }
 
-  filterInput: string = "Filter your to-dos";
+  filterInput: string = "";
   taskList: TaskModel[];
-  addItem: string = "Add your to do";
+  addItem: string;
   newTask: TaskModel;
   
 
@@ -31,6 +31,14 @@ export class ToDoListComponent implements OnInit {
       this.taskList[index].complete = true;
       this.taskList[index].taskClass = "taskComplete";
     } 
+  }
+
+  searchTasks(userInput: string, task: TaskModel) : boolean{
+    if (task.task.toLowerCase().search(userInput.toLowerCase()) == -1) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
   addTask(addItem: string) {

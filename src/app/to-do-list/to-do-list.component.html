@@ -3,15 +3,17 @@
     <div class="inner">
         <h1>To-Do List</h1>
         <p>A place to store things you have to do!</p>
-        <input class="item textbox" [(ngModel)]="filterInput" (click)="filterInput=''"/>
+        <input class="item textbox" [(ngModel)]="filterInput" placeholder="Filter your to-dos"/>
         <ol>
-          <li [ngClass]="item.taskClass" *ngFor="let item of taskList; let i = index">
-            <button *ngIf="this.item.isVisible" class="item button" (click)="changeClass(item.complete, i); this.item.isVisible = false">Complete</button> 
-            {{item.task}} 
-            <button *ngIf="this.item.isVisible" class="item removebutton" (click)="removeTask(i)">X</button>
-          </li>
+          <div *ngFor="let item of taskList; let i = index">
+              <li [ngClass]="item.taskClass" *ngIf="searchTasks(filterInput, item)">
+                  <button *ngIf="this.item.isVisible" class="item button" (click)="changeClass(item.complete, i); this.item.isVisible = false">Complete</button> 
+                  {{item.task}} 
+                  <button *ngIf="this.item.isVisible" class="item removebutton" (click)="removeTask(i)">X</button>
+                </li>
+          </div>
         </ol>
-        <input class="item textbox" [(ngModel)]="addItem" (click)="addItem=''" (keyup.enter)="addTask(addItem)"/> <br>
+        <input class="item textbox" [(ngModel)]="addItem" (click)="addItem=''" (keyup.enter)="addTask(addItem)" placeholder="Add your to do"/> <br>
         <button class="item addbutton" (click)="addTask(addItem); addItem=''">Add</button>
       </div>
   </div>
