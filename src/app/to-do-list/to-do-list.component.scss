@@ -1,22 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto');
-body, html {height: 100%; }
-.parent-container {
-    text-align: center;
-    background-color: #E73D62;
-    //width: 100%;
+.outer {
+    display: table;
+    position: relative;
+    top: 0;
+    left: 0;
     height: 100%;
-}
-.container {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+  
+  .middle {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  .inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
     border-radius: 4px;
     background-color: whitesmoke;
-    display: inline-block;
-    min-width: 400px;
-    padding: 20px;
-    margin: 20px;
+    padding: 30px;
     text-align: left;
     font-family: 'Roboto', sans-serif;
-}
-h1 {
+  }
+h1 
+{
     font-family: 'Montserrat', sans-serif;
     margin: 0px;
 }
