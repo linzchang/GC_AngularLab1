@@ -3,7 +3,7 @@
     <div class="inner">
         <h1>To-Do List</h1>
         <p>A place to store things you have to do!</p>
-        <input class="item textbox" [(ngModel)]="filterInput"/>
+        <input class="item textbox" [(ngModel)]="filterInput" (click)="filterInput=''"/>
         <ol>
           <li [ngClass]="item.taskClass" *ngFor="let item of taskList; let i = index">
             <button *ngIf="this.item.isVisible" class="item button" (click)="changeClass(item.complete, i); this.item.isVisible = false">Complete</button> 
@@ -11,8 +11,8 @@
             <button *ngIf="this.item.isVisible" class="item removebutton" (click)="removeTask(i)">X</button>
           </li>
         </ol>
-        <input class="item textbox" [(ngModel)]="addItem"/> <br>
-        <button class="item addbutton" (click)="addTask(addItem)">Add</button>
+        <input class="item textbox" [(ngModel)]="addItem" (click)="addItem=''" (keyup.enter)="addTask(addItem)"/> <br>
+        <button class="item addbutton" (click)="addTask(addItem); addItem=''">Add</button>
       </div>
   </div>
 </div>
